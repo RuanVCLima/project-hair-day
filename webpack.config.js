@@ -10,7 +10,8 @@ module.exports = {
     output:{
         filename: "main.js",
         path: path.resolve(__dirname, "docs"),
-        clean:true
+        clean:true,
+        publicPath: "",
     },
     devServer: {
         static:{
