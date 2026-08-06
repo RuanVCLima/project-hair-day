@@ -3,10 +3,11 @@
   "description": "Web aplication for scheduling of hair cuts",
   "author": "Ruan Victor",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack serve",
-    "server": "json-server --watch server.json --port 3333"
-  },
+  "build": "webpack",
+  "dev": "webpack serve",
+  "server": "json-server --watch server.json --port 3333",
+  "start": "json-server --watch server.json --host 0.0.0.0 --port $PORT"
+},
   "dependencies": {
     "dayjs": "^1.11.10"
   },
