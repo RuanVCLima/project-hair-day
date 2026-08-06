@@ -1,3 +1,9 @@
 {
-    "schedules": []
+  "schedules": [
+    {
+      "id": 1786015048173,
+      "name": "Ruan Victor",
+      "when": "2026-08-06T17:00:00.000Z"
+    }
+  ]
 }

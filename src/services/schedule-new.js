@@ -1,16 +1,18 @@
 
-import { apiConfig } from "./api-config";
+import { apiConfig } from "./api-config.js";
 
 export async function scheduleNew({id, name, when}){
     try{
+        //making a request to send the dates of scheduling
         await fetch(`${apiConfig.baseURL}/schedules`,{
             method: "POST",
             headers:{
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({id,name,when})
+            body: JSON.stringify({id,name,when}),
         })
 
+        //show message of successful scheduling
         alert("Agendamento realizado com sucesso")
     } catch(error){
         console.log(error)
