@@ -9,18 +9,15 @@ module.exports = {
     entry: path.resolve(__dirname, "src", "main.js"),
     output:{
         filename: "main.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "docs"),
+        clean:true
     },
     devServer: {
         static:{
             directory: path.join(__dirname, "dist")
         },
         port: 3000,
-        open:{
-            app:{
-                name: 'opera',
-            },
-        },
+        open: true,
         liveReload: true,
     },
     plugins: [
@@ -32,7 +29,7 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, "src", "assets"),
-                    to: path.resolve(__dirname, "dist", "src", "assets")
+                    to: path.resolve(__dirname, "docs", "src", "assets")
                 }
             ]
         })
