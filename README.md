@@ -14,7 +14,7 @@ O projeto permite que usuários realizem, consultem e cancelem agendamentos de f
 
 ## 📸 Preview
 
-![Preview](./docs/preview.gif)
+![Preview](./preview/preview.gif)
 
 
 ## 🚀 Demo
