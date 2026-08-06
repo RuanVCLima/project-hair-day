@@ -3,9 +3,14 @@ import { openingHours } from "../../utils/opening-hours.js";
 import { hoursClick } from "./hours-click.js";
 
 const hours = document.getElementById("hours")
-export function hoursLoad({date}){
+export function hoursLoad({date, dailySchedules}){
     //clean the hours list
     hours.innerHTML = ""
+
+    //get the list of all occupied hours
+    const unavailableHours = dailySchedules.map((schedule)=>dayjs(schedule.when).format("HH:mm")
+    )
+    
     const opening = openingHours.map((hour)=>{
         //receive the hour
         const [scheduleHour] = hour.split(":")
@@ -14,10 +19,11 @@ export function hoursLoad({date}){
         //add the hour in to date and verify if it is in the past
         const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs())
 
+        const available = !unavailableHours.includes(hour) && !isHourPast
         //define if the hour is available
        return {
         hour,
-        available: !isHourPast,
+        available,
        }
 
     })
